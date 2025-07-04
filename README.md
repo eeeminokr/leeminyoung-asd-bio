@@ -9,7 +9,7 @@
 **Backend**
 - Java 11, Spring Boot
 - Spring Data JPA, MyBatis
-- Oracle, Maven
+- MySQL,MongoDB, Maven
 - REST API, JWT, Email SMTP
 
 **Frontend**
@@ -85,14 +85,6 @@ cd vue-app
 npm install
 npm run serve
 ```
-
----
-
-## 🔒 보안 주의사항
-
-- 패키지명: `com.ecoinsight.bdsp` → `com.sample.project` 로 익명화
-- DB 정보, 서버 주소, 민감 URI는 제거 또는 가명 처리
-- 실제 운영 데이터는 포함하지 않음
 
 ---
 
