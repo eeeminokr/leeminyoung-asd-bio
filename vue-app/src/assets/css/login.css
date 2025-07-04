@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+@import "reset.css";
+
+/* === fonts === */
+@font-face {
+	font-family: 'NanumBarunGothic';
+	font-style: normal;
+	font-weight: 400;
+	src: url('fonts/NanumBarunGothicWeb.eot');
+	src: url('fonts/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('fonts/NanumBarunGothicWeb.woff') format('woff'), url('fonts/NanumBarunGothicWeb.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'NanumBarunGothic';
+	font-style: normal;
+	font-weight: 700;
+	src: url('fonts/NanumBarunGothicWebBold.eot');
+	src: url('fonts/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('fonts/NanumBarunGothicWebBold.woff') format('woff'), url('fonts/NanumBarunGothicWebBold.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'NanumSquare';
+	font-style: normal;
+	font-weight: 400;
+	src: url('fonts/NanumSquareR.eot');
+	src: url('fonts/NanumSquareR.eot?#iefix') format('embedded-opentype'), url('fonts/NanumSquareR.woff') format('woff'), url('fonts/NanumSquareR.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'NanumSquare';
+	font-style: normal;
+	font-weight: 700;
+	src: url('fonts/NanumSquareB.eot');
+	src: url('fonts/NanumSquareB.eot?#iefix') format('embedded-opentype'), url('fonts/NanumSquareB.woff') format('woff'), url('fonts/NanumSquareB.ttf') format('truetype');
+}
+
+/* common */
+a {text-decoration:none;cursor:pointer;}
+a:hover {color:#000;}
+:focus {outline:none;}
+ol, ul {list-style:none;margin:0;padding:0px;}
+strong {font-weight:700;}
+button {border:0;}
+legend, .txt_hide, .blind {position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(1px 1px 1px 1px); /* IE6, IE7 */clip:rect(1px, 1px, 1px, 1px);}
+.ff_ns {font-family:'NanumSquare', 'dotum', Arial, Helvetica, sans-serif; margin-right: 70px;}
+
+html {height:100%;}
+body {font-size:19px;line-height:1.2em;font-family:'NanumBarunGothic', 'dotum', Arial, Helvetica, sans-serif;}
+input {width:100%;padding:10px 15px;font-size:19px;font-family:'NanumBarunGothic', 'dotum', Arial, Helvetica, sans-serif;color:#212f3f;line-height:26px;border:1px solid #868686;border-radius:6px;background:#fff;box-sizing:border-box;}
+::placeholder {color:#212f3f;}
+
+/* Login Page */
+.login_bg {position:absolute;top:0;left:calc(50% - 153px);width:calc(50% + 153px);height:100%;background:url(../images/login/bg_login2.jpg) no-repeat 0 0 / cover;}
+.login_bg2 {position:absolute;top:0;left:calc(50% - 153px);width:calc(50% + 153px);height:100%;background:url(../images/login/bg_login3.png) no-repeat 0 0 / cover; opacity: 46%;}
+.login_box {position:relative;z-index:10;margin:0 auto;width:1200px;min-height:800px;}
+.login_box .left {padding:310px 0 0 10px;}
+.login_box .left .txt {margin-top:40px;margin-left: -80px;font-size:34px;color:#000;line-height:1.2em;}
+.login_box .right {position:absolute;top:337px;left:717px;}
+.login_input {width:248px;}
+.login_input > li {margin-bottom:9px;}
+.login_input > li.btnwrap {margin:16px 0 0;}
+.login_input > li.btnwrap .btn_login {padding:0;height:52px;line-height:52px;font-size:28px;font-weight:700;color:#fff;text-align:center;border:0;background:#4595ff;  cursor:pointer;}
+/* #0094fa */
+@media screen and (max-width: 1200px) {
+	.login_bg {left:447px;width:753px;}
+}

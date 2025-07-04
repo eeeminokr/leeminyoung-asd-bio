@@ -1,0 +1,88 @@
+import PerfectScrollbar  from '../assets/js/dashbaordtable-scrollbar';
+import ComboTree  from '../assets/js/comboTreePlugin';
+// import style from "../assets/css/style";
+// import dashboard from "../assets/css/dashBoardstyle";
+// import scrolls from "../assets/css/perfect-scrollbar";
+export const jqueryUI = {
+    perfectScrollbar: {
+        /**
+         * 테이블(<table>)에 가로, 세로 스크롤 생성
+         */
+        create : function() {
+            // style,
+            // dashboard,
+            // scrolls
+    // table scroll - 스크롤 생성
+    $(".tb_background").each(function(){
+        var table = $(this);
+        var tableColgroup = table.find("colgroup").html();
+        var tableThead = table.find("thead").html();
+        var tableTbody = table.find("tbody").html();
+        var tbodyHeight = table.attr('data-height') + 'px';
+
+        var setHTML = '<tr><td><div class="scroll_head"><table class="tb_head"><colgroup>' + tableColgroup + '</colgroup><thead>' + tableThead + '</thead></table></div><div class="scroll_body"><table class="tb_body"><colgroup>' + tableColgroup + '</colgroup><tbody>' + tableTbody + '</tbody></table></div></td></tr>';
+
+        table.html(setHTML);
+        table.find(".scroll_body").css('max-height', tbodyHeight);
+    });
+
+    // table scroll - 가로 스크롤 움직임
+    $('.scroll_body').scroll(function () {
+        var xPoint = $(this).scrollLeft();
+        $(this).closest('.tb_background').find('.scroll_head').scrollLeft(xPoint);
+    });
+ // 테이블 스크롤시 고정되는 부분이 있는 경우
+ $("tr").each(function(){
+    var sum = 0;
+    $(this).find(".sticky").each(function(){
+        if( $(this).prev().length == 0 ){
+            $(this).css("left", "0px");
+        } else {
+            var leftNum = $(this).prev().outerWidth();
+            sum += leftNum;
+            $(this).css("left", sum + "px");
+        }
+    });
+});
+
+// $('.scroll_body').each(function(){
+//     const ps = new PerfectScrollbar($(this)[0]);
+// });
+
+$('.scroll_body').on('scroll', (function () {
+    var xPoint = $('.scroll_body').scrollLeft();
+    $('.scroll_head').scrollLeft(xPoint);
+}));
+    // 테이블 스크롤시 고정되는 부분이 있는 경우
+    $("tr").each(function(){
+        var sum = 0;
+        $(this).find(".sticky").each(function(){
+            if( $(this).prev().length == 0 ){
+                $(this).css("left", "0px");
+            } else {
+                var leftNum = $(this).prev().outerWidth();
+                sum += leftNum;
+                $(this).css("left", sum + "px");
+            }
+        });
+
+        $(this).find(".sticky_last").each(function(){
+            $(this).css({
+                "right" : "0px",
+                "border-left" : "1px solid #c4c9ce"
+            });
+            $(this).prev().css("border-right","0px");
+        });
+    });
+        }
+    },
+
+    comboTree: {
+        init: function() {
+            $(".comboTreeWrapper").each (function() {
+                const data = $(this).data('combo-options');
+                new ComboTree(this, data);
+            });
+        }
+    }
+}
