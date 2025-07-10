@@ -31,7 +31,15 @@
 | 대시보드 통계 | 다양한 실험군별 통계 데이터 생성 |
 | 메일 발송 | SMTP 기반 이벤트 알림 메일 전송 |
 | 배치 작업 | 정기적 데이터 동기화 및 파일 업로드 |
+Naver Cloud Platform Object Storage (S3 호환)
 
+Java AWS SDK (NCP 호환 라이브러리 사용)
+
+AES-256 암복호화
+
+Apache POI (Excel 파싱)
+
+FFmpeg or OpenCV 기반 mp4 비디오 마스킹 처리 (Defacing)
 ---
 
 ### ✅ Frontend (vue-app/)
