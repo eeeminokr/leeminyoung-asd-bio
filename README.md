@@ -40,6 +40,8 @@ AES-256 암복호화
 Apache POI (Excel 파싱)
 
 FFmpeg or OpenCV 기반 mp4 비디오 마스킹 처리 (Defacing)
+
+Naver Cloud ObjectStorage S3 연동
 ---
 
 ### ✅ Frontend (vue-app/)
